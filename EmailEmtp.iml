@@ -30,6 +30,11 @@
     <orderEntry type="library" name="JAX-RS-2.1.1" level="project" />
     <orderEntry type="library" name="lib (3)" level="project" />
     <orderEntry type="library" name="lib (4)" level="project" />
+    <orderEntry type="library" name="Maven: org.quartz-scheduler:quartz:2.3.2" level="project" />
+    <orderEntry type="library" name="Maven: com.mchange:c3p0:0.9.5.4" level="project" />
+    <orderEntry type="library" name="Maven: com.mchange:mchange-commons-java:0.2.15" level="project" />
+    <orderEntry type="library" name="Maven: com.zaxxer:HikariCP-java7:2.4.13" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.7" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.resteasy:resteasy-jaxrs:4.0.0.Beta5" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.spec.javax.ws.rs:jboss-jaxrs-api_2.1_spec:1.0.1.Final" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.spec.javax.xml.bind:jboss-jaxb-api_2.3_spec:1.0.0.Final" level="project" />
@@ -62,6 +67,11 @@
     <orderEntry type="library" name="Maven: org.apache.james:apache-mime4j-core:0.7.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.james:apache-mime4j-storage:0.7.2" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.microprofile.config:microprofile-config-api:1.4" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.resteasy:resteasy-jackson-provider:3.11.2.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13.redhat-00006" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13.redhat-00006" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-jaxrs:1.9.13.redhat-00006" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-xc:1.9.13.redhat-00006" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.resteasy:resteasy-client:4.5.3.Final" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.resteasy:resteasy-client-api:4.5.3.Final" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.13" level="project" />

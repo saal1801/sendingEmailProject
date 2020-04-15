@@ -1,4 +1,4 @@
-package main.java.com.email.webserver;
+/*package main.java.com.email.webserver;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
@@ -31,4 +31,4 @@ public class EmailService {
 
 
     }
-}
+}*/

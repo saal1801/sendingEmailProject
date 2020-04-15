@@ -1,6 +1,9 @@
 package main.java.com.email.webserver;
 
 import main.java.com.email.webserver.EmailRestServer;
+import org.quartz.*;
+import org.quartz.impl.StdScheduler;
+import org.quartz.impl.StdSchedulerFactory;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
@@ -43,4 +46,28 @@ public class MyApplication extends Application {
         h.add( EmailRestServer.class );
         return h;
     }
+
+    JobDetail job = JobBuilder.newJob( HellowJob.class)
+            .withIdentity("jobName", "jobGroup")
+            .build();
+
+    Trigger trigger = TriggerBuilder
+            .newTrigger()
+            .withIdentity("triggerName", "triggerGroup")
+            .withSchedule(
+                    CronScheduleBuilder.cronSchedule("0/2 * * * * ?"))
+            .build();
+
+    Scheduler scheduler;
+
+    {
+        try {
+            scheduler = new StdSchedulerFactory().getScheduler();
+            scheduler.start();
+            scheduler.scheduleJob(job, trigger);
+        } catch (SchedulerException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

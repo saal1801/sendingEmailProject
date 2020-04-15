@@ -14,6 +14,11 @@
           <element id="module-output" name="EmailEmtp" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.quartz-scheduler:quartz:2.3.2" />
+          <element id="library" level="project" name="Maven: com.mchange:c3p0:0.9.5.4" />
+          <element id="library" level="project" name="Maven: com.mchange:mchange-commons-java:0.2.15" />
+          <element id="library" level="project" name="Maven: com.zaxxer:HikariCP-java7:2.4.13" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.7" />
           <element id="library" level="project" name="Maven: org.jboss.resteasy:resteasy-jaxrs:4.0.0.Beta5" />
           <element id="library" level="project" name="Maven: org.jboss.spec.javax.ws.rs:jboss-jaxrs-api_2.1_spec:1.0.1.Final" />
           <element id="library" level="project" name="Maven: org.jboss.spec.javax.xml.bind:jboss-jaxb-api_2.3_spec:1.0.0.Final" />
@@ -46,6 +51,11 @@
           <element id="library" level="project" name="Maven: org.apache.james:apache-mime4j-core:0.7.2" />
           <element id="library" level="project" name="Maven: org.apache.james:apache-mime4j-storage:0.7.2" />
           <element id="library" level="project" name="Maven: org.eclipse.microprofile.config:microprofile-config-api:1.4" />
+          <element id="library" level="project" name="Maven: org.jboss.resteasy:resteasy-jackson-provider:3.11.2.Final" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13.redhat-00006" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13.redhat-00006" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-jaxrs:1.9.13.redhat-00006" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-xc:1.9.13.redhat-00006" />
           <element id="library" level="project" name="Maven: org.jboss.resteasy:resteasy-client:4.5.3.Final" />
           <element id="library" level="project" name="Maven: org.jboss.resteasy:resteasy-client-api:4.5.3.Final" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.13" />

@@ -22,7 +22,7 @@ public class EmailTextClass {
         final String userName = "ab56213dc75004";
         final String password = "4d957bd8286db4";
         String host = "smtp.mailtrap.io";
-        String port = "25255";
+        String port = "2525";
 
         Logger _log = Logger.getLogger(EmailTextClass.class.getName());
 

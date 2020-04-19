@@ -2,20 +2,18 @@ package main.java.com.email.webserver;
 
 
 import main.java.com.email.webserver.dao.EmailMessage;
-import org.jboss.resteasy.client.jaxrs.internal.ClientResponse;
+import org.quartz.*;
 
 import javax.mail.MessagingException;
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
+import java.util.UUID;
 //import org.onosproject.app.ApplicationAdminService;
 
 @Path("/rest")
@@ -25,13 +23,13 @@ public class EmailRestServer {
 
     @GET
     @Path("/start")
-    @Produces({MediaType.TEXT_HTML})
+    @Produces({"text/html"})
     public Response getStartPage(){
 
         StringBuilder builder = new StringBuilder();
 
-        String HTML = HTMLReader.INBOX_PAGE;
-        builder.append(HTML);
+        String html = HTMLReader.INBOX_PAGE;
+        builder.append(html);
 
         return Response.ok(builder.toString()).build();
     }
@@ -39,18 +37,72 @@ public class EmailRestServer {
 
 
 
-
+    private Scheduler scheduler;
 
     @POST
     @Path("/email")
-    //@Produces({MediaType.APPLICATION_JSON})
-    @Consumes("application/json")
-    public Response queueEmail(EmailMessage emailMessage) throws ParseException, SQLException, ClassNotFoundException, InterruptedException {
-// Insert email into Database.
-// Return email reference from database.
+    @Produces({"application/json"})
+    @Consumes({"application/json"})
+    public Response queueEmail(EmailMessage emailMessage ) throws SchedulerException {
+    // Insert email into Database.
+    // Return email reference from database.
 
 
-        return Response.status(200).entity("post").build();
+        String incoming = "";
+        HttpServletRequest req = null;
+
+    try {
+        EmailMessage emailMessageReq = JsonConverter.convertFromJson(incoming, EmailMessage.class);
+
+        SQLConClass.INSTANCE.getConnection(emailMessage.getFrom(),
+                                           emailMessage.getTo(),
+                                           emailMessage.getSubject(),
+                                           emailMessage.getBody() );
+
+
+        if (emailMessage.status == EmailMessage.STATUS_OK) {
+            emailMessage.authTOken = UUID.randomUUID().toString();
+            emailMessageReq.sessionId = req.getSession().getId();
+        }
+
+    }catch (Throwable t){
+
+        emailMessage = new EmailMessage(HttpURLConnection.HTTP_BAD_REQUEST, t.getMessage());
+        }
+
+    /*JobDetail jobDetail = buliderJobDetail(emailMessage);
+    Trigger trigger = builderJobTrigger(jobDetail);
+    scheduler.scheduleJob(jobDetail,trigger);*/
+
+        String json = JsonConverter.convertToJson(emailMessage);
+
+        return Response.status(200).entity(json).build();
+    }
+
+    private JobDetail buliderJobDetail(EmailMessage emailMessage){
+        JobDataMap jobDataMap = new JobDataMap();
+
+        jobDataMap.put("address", emailMessage.from);
+        jobDataMap.put("toAddress", emailMessage.to);
+        jobDataMap.put("subject", emailMessage.subject);
+        jobDataMap.put("body", emailMessage.body);
+
+        return  JobBuilder.newJob(HallowJobClass.class)
+                .withIdentity(UUID.randomUUID().toString(), "email-jobs")
+                .withDescription("Send Email Job")
+                .usingJobData(jobDataMap)
+                .storeDurably()
+                .build();
+    }
+    private Trigger builderJobTrigger(JobDetail jobDetail){
+        return TriggerBuilder.newTrigger()
+                .forJob(jobDetail)
+                .withIdentity(jobDetail.getKey().getName(), "email-triggers")
+                .withDescription("Send Email Trigger")
+                //.startAt(Date.from(startAt.toInstant()))
+                .withSchedule(CronScheduleBuilder.cronSchedule("0/5 * * * * ?"))
+                .build();
+
     }
 
     @GET
@@ -98,11 +150,11 @@ public class EmailRestServer {
         try {
             emailTextClass.sendPlainTextEmail(address, subject, message);
             emailTextClass.receiveMail();
-            sqlConClass.getConnection();
+            //sqlConClass.getConnection();
 
             builder.append("\t Message sent");
 
-        } catch (ParseException | IOException | MessagingException | SQLException | ClassNotFoundException e) {
+        } catch (ParseException | IOException | MessagingException e) {
             e.printStackTrace();
             sqlConClass.run();
             builder.append(" \t Message failed");

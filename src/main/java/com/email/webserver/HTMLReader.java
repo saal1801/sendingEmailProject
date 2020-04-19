@@ -19,7 +19,7 @@ public class HTMLReader {
 
     public static final String INBOX_PAGE = readFile("EmailPage.html");
 
-    public static final HTMLReader INSTANCE = new HTMLReader();
+    //public static final HTMLReader INSTANCE = new HTMLReader();
 
 
 

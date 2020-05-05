@@ -6,64 +6,85 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19de996b-822c-4a2b-9720-dc7df22ed7d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_11_0_rc1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_11_0_rc1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_11_0_rc1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_jdk14_1_7_29.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/email/webserver/HallowJobClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/email/webserver/JsonConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/main/java/com/email/webserver/HTMLReader.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/main/java/com/email/webserver/HallowJobClass$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/main/java/com/email/webserver/HallowJobClass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/main/java/com/email/webserver/JsonConverter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/main/java/com/email/webserver/SQLConClass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/main/java/com/email/webserver/dao/EmailMessage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/lib/HikariCP-java7-2.4.13.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/lib/c3p0-0.9.5.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/lib/gson-2.8.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/lib/jackson-annotations-2.11.0.rc1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/lib/jackson-core-2.11.0.rc1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/lib/jackson-core-asl-1.9.13.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/lib/jackson-databind-2.11.0.rc1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/lib/jackson-jaxrs-1.9.13.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/lib/jackson-mapper-asl-1.9.13.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/lib/jackson-xc-1.9.13.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/lib/mchange-commons-java-0.2.15.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/lib/quartz-2.3.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/lib/resteasy-jackson-provider-4.0.0.Beta5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/lib/slf4j-api-1.7.7.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/lib/slf4j-jdk14-1.7.29.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/com/email/webserver/HTMLReader.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/com/email/webserver/HallowJobClass$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/com/email/webserver/HallowJobClass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/com/email/webserver/JsonConverter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/com/email/webserver/SQLConClass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/main/java/com/email/webserver/dao/EmailMessage.class" afterDir="false" />
+    <list default="true" id="19de996b-822c-4a2b-9720-dc7df22ed7d9" name="Default Changelist" comment="update">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_ibm_icu_icu4j_58_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_abego_treelayout_org_abego_treelayout_core_1_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_ST4_4_0_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr4_4_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr4_runtime_4_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr_runtime_3_5_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_dom4j_dom4j_2_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_javax_json_1_0_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_1_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_orm_hibernate_core_6_0_0_Alpha4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_24_0_GA.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_1_1_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_1_1_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_vintage_junit_vintage_engine_5_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DOAService/DOAServerLocal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/EmailMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/EmailResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/webserver/EmailRestServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/webserver/MyApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/webserver/MyServletContextListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/EmailEmtp_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/EmailEmtp_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_13_redhat_00006.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_13.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_jaxrs_1_9_13_redhat_00006.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_jaxrs_1_9_13.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_13_redhat_00006.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_13.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_xc_1_9_13_redhat_00006.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_xc_1_9_13.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_resteasy_resteasy_jackson_provider_3_11_2_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_resteasy_resteasy_jackson_provider_4_0_0_Beta5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_1_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EmailEmtp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EmailEmtp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EmailEmtp/META-INF/EmailEmtp.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/email/webserver/EmailRestServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/email/webserver/EmailRestServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/email/webserver/EmailTextClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/email/webserver/EmailTextClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/email/webserver/HTMLReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/email/webserver/HTMLReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/email/webserver/HellowJob.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/email/webserver/MyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/email/webserver/MyApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/email/webserver/SQLConClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/email/webserver/SQLConClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/email/webserver/dao/EmailMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/email/webserver/dao/EmailMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/main/java/com/email/webserver/EmailRestServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/main/java/com/email/webserver/EmailRestServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/main/java/com/email/webserver/EmailTextClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/main/java/com/email/webserver/EmailTextClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/main/java/com/email/webserver/MyApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/main/java/com/email/webserver/MyApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/email/webserver/EmailRestServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/email/webserver/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/emailServer/EmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/email/webserver/EmailTextClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/emailServer/EmailTextClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/email/webserver/HTMLReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/HTMLReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/email/webserver/HallowJobClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/webserver/HallowJobClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/email/webserver/JsonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/JsonConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/email/webserver/MyApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/email/webserver/SQLConClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DOAService/SQLConClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/email/webserver/dao/EmailMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/main/java/com/email/webserver/EmailRestServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/main/java/com/email/webserver/EmailTextClass$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/main/java/com/email/webserver/EmailTextClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/main/java/com/email/webserver/HTMLReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/main/java/com/email/webserver/HallowJobClass$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/main/java/com/email/webserver/HallowJobClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/main/java/com/email/webserver/JsonConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/main/java/com/email/webserver/MyApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/main/java/com/email/webserver/SQLConClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/classes/main/java/com/email/webserver/dao/EmailMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/lib/jboss-logging-3.3.1.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmailEmtp-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/EmailProject.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/EmailProject.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/java/com/email/webserver/EmailRestServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/java/com/email/webserver/EmailRestServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/java/com/email/webserver/EmailTextClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/java/com/email/webserver/EmailTextClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/java/com/email/webserver/MyApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/java/com/email/webserver/MyApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/EmailEmtp.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/com/email/webserver/EmailRestServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/com/email/webserver/EmailTextClass$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/com/email/webserver/EmailTextClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/com/email/webserver/HTMLReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/com/email/webserver/HallowJobClass$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/com/email/webserver/HallowJobClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/com/email/webserver/JsonConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/com/email/webserver/MyApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/com/email/webserver/SQLConClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/com/email/webserver/dao/EmailMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,12 +110,6 @@
     </expand>
     <select />
   </component>
-  <component name="ErrorTreeViewConfiguration">
-    <option name="hideInfoMessages" value="true" />
-    <option name="hideWarnings" value="true" />
-    <option name="HIDE_WARNINGS" value="true" />
-    <option name="HIDE_INFO_MESSAGES" value="true" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -113,18 +128,10 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="1YjELD9I37DoLWYjsWLvVtMdsdq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -141,30 +148,34 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\sarko.ali\EmailSmtp\src\main\resources" />
-      <recent name="C:\Users\sarko.ali\EmailSmtp\src\com\email\webserver" />
-      <recent name="C:\Users\sarko.ali\EmailSmtp\src\webserver" />
-      <recent name="C:\Users\sarko.ali\EmailSmtp\web" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.email.webserver" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sarko.ali\EmailSmtp\lib" />
       <recent name="C:\Users\sarko.ali\EmailSmtp\web\WEB-INF" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.email.webserver" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sarko.ali\EmailSmtp\src\main\java\emailServer" />
+      <recent name="C:\Users\sarko.ali\EmailSmtp\src\main\resources" />
+      <recent name="C:\Users\sarko.ali\EmailSmtp\src\com\email\webserver" />
+      <recent name="C:\Users\sarko.ali\EmailSmtp\src\webserver" />
+      <recent name="C:\Users\sarko.ali\EmailSmtp\web" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.51">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.54">
     <configuration name="SendMailSSL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SendMailSSL" />
       <module name="EmailEmtp" />
       <method v="2">
         <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="EmailEmtp:war" />
+        </option>
       </method>
     </configuration>
-    <configuration name="Tomcat 8.5.51" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.51" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/EmailEmtp_war/rest/" />
+    <configuration name="Tomcat 8.5.54" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.51" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/EmailEmtp_war/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="EmailEmtp:war">
@@ -174,7 +185,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Tomcat_8_5_51_EmailEmtp" />
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_EmailSmtp_2" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -182,7 +193,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="52782" />
+        <option name="DEBUG_PORT" value="62434" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -230,6 +241,7 @@
         </SHUTDOWN>
       </ConfigurationWrapper>
       <method v="2">
+        <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="EmailEmtp:war" />
         </option>
@@ -329,36 +341,13 @@
     </configuration>
     <list>
       <item itemvalue="Application.SendMailSSL" />
-      <item itemvalue="Tomcat Server.Tomcat 8.5.51" />
+      <item itemvalue="Tomcat Server.Tomcat 8.5.54" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.SendMailSSL" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <option name="contentProportion" value="0.14927647" />
-          <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-            </expand>
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -416,7 +405,19 @@
       <workItem from="1587114948496" duration="34491000" />
       <workItem from="1587312706531" duration="191000" />
       <workItem from="1587313041952" duration="310000" />
-      <workItem from="1587313373644" duration="3865000" />
+      <workItem from="1587313373644" duration="21695000" />
+      <workItem from="1587455532778" duration="22845000" />
+      <workItem from="1587541504675" duration="48258000" />
+      <workItem from="1587669143514" duration="10282000" />
+      <workItem from="1587729762511" duration="24938000" />
+      <workItem from="1588064610192" duration="10600000" />
+      <workItem from="1588076354458" duration="25104000" />
+      <workItem from="1588153676555" duration="25025000" />
+      <workItem from="1588197684676" duration="2961000" />
+      <workItem from="1588230049944" duration="17411000" />
+      <workItem from="1588624145829" duration="1563000" />
+      <workItem from="1588662656823" duration="13734000" />
+      <workItem from="1588711896344" duration="3100000" />
     </task>
     <task id="LOCAL−00001" summary="last update">
       <created>1586951529430</created>
@@ -428,30 +429,31 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="last update" />
-    <option name="LAST_COMMIT_MESSAGE" value="last update" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="598" y="284" key="#BuildArtifactsBeforeRunChooser" timestamp="1586954525291">
+    <state x="598" y="284" key="#BuildArtifactsBeforeRunChooser" timestamp="1588198160462">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="598" y="284" key="#BuildArtifactsBeforeRunChooser/0.0.1536.824@0.0.1536.824" timestamp="1586954525291" />
+    <state x="598" y="284" key="#BuildArtifactsBeforeRunChooser/0.0.1536.824@0.0.1536.824" timestamp="1588198160462" />
     <state x="327" y="96" key="#Plugins" timestamp="1587313354424">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="327" y="96" key="#Plugins/0.0.1536.824@0.0.1536.824" timestamp="1587313354424" />
-    <state x="315" y="112" key="#Project_Structure" timestamp="1586021867865">
+    <state x="315" y="112" key="#Project_Structure" timestamp="1588198173276">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="4234" y="158" key="#Project_Structure/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583850428498" />
-    <state x="315" y="112" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1586021867865" />
-    <state x="722" y="142" key="#SQL_Dialects" timestamp="1586381656218">
+    <state x="315" y="112" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1588198173276" />
+    <state x="722" y="142" key="#SQL_Dialects" timestamp="1588086866646">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="722" y="142" key="#SQL_Dialects/0.0.1536.824@0.0.1536.824" timestamp="1586381656218" />
+    <state x="722" y="142" key="#SQL_Dialects/0.0.1536.824@0.0.1536.824" timestamp="1588086866646" />
     <state x="429" y="31" key="#Tomcat_8.5.51" timestamp="1585738701004">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -460,22 +462,22 @@
       <screen x="3840" y="0" width="1920" height="1160" />
     </state>
     <state x="4434" y="267" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583759618014" />
-    <state x="272" y="111" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586954535387">
+    <state x="268" y="52" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588198235397">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="284" y="142" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@0.0.1536.824" timestamp="1583852604832" />
     <state x="4195" y="334" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583849824016" />
-    <state x="272" y="111" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1586954535387" />
+    <state x="268" y="52" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1588198235397" />
     <state x="353" y="133" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1586358994904">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="4281" y="187" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583849784303" />
     <state x="353" y="133" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1536.824@0.0.1536.824" timestamp="1586358994904" />
-    <state x="791" y="193" key="#com.intellij.ide.util.MemberChooser" timestamp="1587144803855">
+    <state x="791" y="193" key="#com.intellij.ide.util.MemberChooser" timestamp="1588234233520">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="4829" y="357" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583855570932" />
-    <state x="791" y="193" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1587144803855" />
+    <state x="791" y="193" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1588234233520" />
     <state x="366" y="126" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1585931038324">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -484,10 +486,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="522" y="360" key="#com.intellij.javaee.module.view.web.EditWebRootDialog/0.0.1536.824@0.0.1536.824" timestamp="1585938792080" />
-    <state x="423" y="164" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1587132864466">
+    <state x="423" y="164" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1588711199386">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="423" y="164" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1587132864466" />
+    <state x="423" y="164" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1588711199386" />
+    <state x="416" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1587664748784">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="416" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1587664748784" />
     <state x="473" y="175" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1587125980188">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -496,10 +502,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="142" key="#toString()_Generation_Settings/0.0.1536.824@0.0.1536.824" timestamp="1586352898274" />
-    <state x="233" y="14" key="CommitChangelistDialog2" timestamp="1587330438802">
+    <state x="233" y="14" key="CommitChangelistDialog2" timestamp="1587330713096">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="233" y="14" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587330438802" />
+    <state x="233" y="14" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587330713096" />
     <state x="4396" y="215" key="DetectedRootsChooserDialog" timestamp="1583850407764">
       <screen x="3840" y="0" width="1920" height="1160" />
     </state>
@@ -526,94 +532,94 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1116" height="535" key="GridCell.Tab.-1.right/0.0.1536.824@0.0.1536.824" timestamp="1586953522448" />
-    <state width="1116" height="159" key="GridCell.Tab.0.bottom" timestamp="1587154112021">
+    <state width="1245" height="611" key="GridCell.Tab.0.bottom" timestamp="1588715942802">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1342" height="206" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@0.0.1536.824" timestamp="1583852621426" />
     <state width="1340" height="202" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@1920.0.1920.1160" timestamp="1584365097372" />
     <state width="1340" height="205" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583941230226" />
-    <state width="1116" height="159" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587154112021" />
-    <state width="1116" height="159" key="GridCell.Tab.0.center" timestamp="1587154112021">
+    <state width="1245" height="611" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588715942802" />
+    <state width="1245" height="611" key="GridCell.Tab.0.center" timestamp="1588715942802">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1342" height="206" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@0.0.1536.824" timestamp="1583852621426" />
     <state width="1340" height="202" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@1920.0.1920.1160" timestamp="1584365097372" />
     <state width="1340" height="205" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583941230226" />
-    <state width="1116" height="159" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587154112021" />
-    <state width="1116" height="159" key="GridCell.Tab.0.left" timestamp="1587154112021">
+    <state width="1245" height="611" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588715942802" />
+    <state width="1245" height="611" key="GridCell.Tab.0.left" timestamp="1588715942802">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1342" height="206" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@0.0.1536.824" timestamp="1583852621426" />
     <state width="1340" height="202" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@1920.0.1920.1160" timestamp="1584365097372" />
     <state width="1340" height="205" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583941230226" />
-    <state width="1116" height="159" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587154112021" />
-    <state width="1116" height="159" key="GridCell.Tab.0.right" timestamp="1587154112021">
+    <state width="1245" height="611" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588715942802" />
+    <state width="1245" height="611" key="GridCell.Tab.0.right" timestamp="1588715942802">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1342" height="206" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@0.0.1536.824" timestamp="1583852621426" />
     <state width="1340" height="202" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@1920.0.1920.1160" timestamp="1584365097372" />
     <state width="1340" height="205" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583941230226" />
-    <state width="1116" height="159" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587154112021" />
-    <state width="1116" height="159" key="GridCell.Tab.1.bottom" timestamp="1587154112021">
+    <state width="1245" height="611" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588715942802" />
+    <state width="1245" height="611" key="GridCell.Tab.1.bottom" timestamp="1588715942802">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1340" height="256" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583850068579" />
-    <state width="1116" height="159" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587154112021" />
-    <state width="1116" height="159" key="GridCell.Tab.1.center" timestamp="1587154112021">
+    <state width="1245" height="611" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588715942802" />
+    <state width="1245" height="611" key="GridCell.Tab.1.center" timestamp="1588715942802">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1340" height="256" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583850068579" />
-    <state width="1116" height="159" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1587154112021" />
-    <state width="1116" height="159" key="GridCell.Tab.1.left" timestamp="1587154112021">
+    <state width="1245" height="611" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588715942802" />
+    <state width="1245" height="611" key="GridCell.Tab.1.left" timestamp="1588715942802">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1340" height="256" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583850068579" />
-    <state width="1116" height="159" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1587154112021" />
-    <state width="1116" height="159" key="GridCell.Tab.1.right" timestamp="1587154112021">
+    <state width="1245" height="611" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588715942802" />
+    <state width="1245" height="611" key="GridCell.Tab.1.right" timestamp="1588715942802">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1340" height="256" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583850068579" />
-    <state width="1116" height="159" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1587154112021" />
-    <state width="1116" height="159" key="GridCell.Tab.2.bottom" timestamp="1587154112021">
+    <state width="1245" height="611" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588715942802" />
+    <state width="1245" height="611" key="GridCell.Tab.2.bottom" timestamp="1588715942803">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="917" height="207" key="GridCell.Tab.2.bottom/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583849146874" />
-    <state width="1116" height="159" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587154112021" />
-    <state width="1116" height="159" key="GridCell.Tab.2.center" timestamp="1587154112021">
+    <state width="1245" height="611" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588715942803" />
+    <state width="1245" height="611" key="GridCell.Tab.2.center" timestamp="1588715942802">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="917" height="207" key="GridCell.Tab.2.center/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583849146874" />
-    <state width="1116" height="159" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1587154112021" />
-    <state width="1116" height="159" key="GridCell.Tab.2.left" timestamp="1587154112021">
+    <state width="1245" height="611" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1588715942802" />
+    <state width="1245" height="611" key="GridCell.Tab.2.left" timestamp="1588715942802">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="917" height="207" key="GridCell.Tab.2.left/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583849146874" />
-    <state width="1116" height="159" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1587154112021" />
-    <state width="1116" height="159" key="GridCell.Tab.2.right" timestamp="1587154112021">
+    <state width="1245" height="611" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1588715942802" />
+    <state width="1245" height="611" key="GridCell.Tab.2.right" timestamp="1588715942803">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="917" height="207" key="GridCell.Tab.2.right/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583849146874" />
-    <state width="1116" height="159" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1587154112021" />
-    <state width="1116" height="159" key="GridCell.Tab.3.bottom" timestamp="1587154112022">
+    <state width="1245" height="611" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1588715942803" />
+    <state width="1245" height="158" key="GridCell.Tab.3.bottom" timestamp="1588199516961">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="917" height="207" key="GridCell.Tab.3.bottom/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583849146875" />
-    <state width="1116" height="159" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587154112022" />
-    <state width="1116" height="159" key="GridCell.Tab.3.center" timestamp="1587154112022">
+    <state width="1245" height="158" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588199516961" />
+    <state width="1245" height="158" key="GridCell.Tab.3.center" timestamp="1588199516961">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="917" height="207" key="GridCell.Tab.3.center/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583849146875" />
-    <state width="1116" height="159" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1587154112022" />
-    <state width="1116" height="159" key="GridCell.Tab.3.left" timestamp="1587154112021">
+    <state width="1245" height="158" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1588199516961" />
+    <state width="1245" height="158" key="GridCell.Tab.3.left" timestamp="1588199516961">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="917" height="207" key="GridCell.Tab.3.left/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583849146874" />
-    <state width="1116" height="159" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1587154112021" />
-    <state width="1116" height="159" key="GridCell.Tab.3.right" timestamp="1587154112022">
+    <state width="1245" height="158" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1588199516961" />
+    <state width="1245" height="158" key="GridCell.Tab.3.right" timestamp="1588199516961">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="917" height="207" key="GridCell.Tab.3.right/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583849146875" />
-    <state width="1116" height="159" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1587154112022" />
+    <state width="1245" height="158" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1588199516961" />
     <state width="1116" height="147" key="GridCell.Tab.4.bottom" timestamp="1586953469563">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -634,22 +640,22 @@
     </state>
     <state width="917" height="207" key="GridCell.Tab.4.right/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583849080542" />
     <state width="1116" height="147" key="GridCell.Tab.4.right/0.0.1536.824@0.0.1536.824" timestamp="1586953469562" />
-    <state width="1116" height="179" key="GridCell.Tab.5.bottom" timestamp="1586554910853">
+    <state width="1245" height="303" key="GridCell.Tab.5.bottom" timestamp="1588665891433">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1116" height="179" key="GridCell.Tab.5.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586554910853" />
-    <state width="1116" height="179" key="GridCell.Tab.5.center" timestamp="1586554910853">
+    <state width="1245" height="303" key="GridCell.Tab.5.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588665891433" />
+    <state width="1245" height="303" key="GridCell.Tab.5.center" timestamp="1588665891432">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1116" height="179" key="GridCell.Tab.5.center/0.0.1536.824@0.0.1536.824" timestamp="1586554910853" />
-    <state width="1116" height="179" key="GridCell.Tab.5.left" timestamp="1586554910853">
+    <state width="1245" height="303" key="GridCell.Tab.5.center/0.0.1536.824@0.0.1536.824" timestamp="1588665891432" />
+    <state width="1245" height="303" key="GridCell.Tab.5.left" timestamp="1588665891432">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1116" height="179" key="GridCell.Tab.5.left/0.0.1536.824@0.0.1536.824" timestamp="1586554910853" />
-    <state width="1116" height="179" key="GridCell.Tab.5.right" timestamp="1586554910853">
+    <state width="1245" height="303" key="GridCell.Tab.5.left/0.0.1536.824@0.0.1536.824" timestamp="1588665891432" />
+    <state width="1245" height="303" key="GridCell.Tab.5.right" timestamp="1588665891432">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1116" height="179" key="GridCell.Tab.5.right/0.0.1536.824@0.0.1536.824" timestamp="1586554910853" />
+    <state width="1245" height="303" key="GridCell.Tab.5.right/0.0.1536.824@0.0.1536.824" timestamp="1588665891432" />
     <state width="1116" height="179" key="GridCell.Tab.6.bottom" timestamp="1586554909539">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -671,10 +677,10 @@
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583848424597" />
     <state width="189" height="325" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1585154016444" />
-    <state x="257" y="67" key="Maven.ArtifactSearchDialog" timestamp="1587078132410">
+    <state x="257" y="67" key="Maven.ArtifactSearchDialog" timestamp="1588164975927">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="257" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1587078132410" />
+    <state x="257" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1588164975927" />
     <state x="4143" y="142" key="SettingsEditor" timestamp="1583850507405">
       <screen x="3840" y="0" width="1920" height="1160" />
     </state>
@@ -687,66 +693,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="536" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1586951274434" />
+    <state x="472" y="184" key="extract.method.dialog" timestamp="1587673805236">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="472" y="184" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1587673805236" />
+    <state x="435" y="150" width="611" height="536" key="find.popup" timestamp="1587560207414">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="435" y="150" width="611" height="536" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1587560207414" />
     <state x="177" y="0" key="new project wizard" timestamp="1585737694199">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="177" y="0" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1585737694199" />
-    <state x="446" y="52" key="refactoring.ChangeSignatureDialog" timestamp="1587139744184">
+    <state x="446" y="52" key="refactoring.ChangeSignatureDialog" timestamp="1588178817030">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="446" y="52" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1587139744184" />
-    <state x="416" y="170" key="run.anything.popup" timestamp="1586552615800">
+    <state x="446" y="52" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1588178817030" />
+    <state x="416" y="170" key="run.anything.popup" timestamp="1588199555270">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="4360" y="238" key="run.anything.popup/0.0.1536.824/1920.0.1920.1160/3840.0.1920.1160@3840.0.1920.1160" timestamp="1583837780759" />
-    <state x="416" y="170" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1586552615800" />
+    <state x="416" y="170" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1588199555270" />
     <state x="499" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1586954019499">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1586954019499" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/email/webserver/HallowJobClass.java</url>
-          <line>24</line>
-          <properties class="main.java.com.email.webserver.HallowJobClass" method="execute">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="64" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/email/webserver/SQLConClass.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="75" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/email/webserver/SQLConClass.java</url>
-          <line>76</line>
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/email/webserver/SQLConClass.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/email/webserver/SQLConClass.java</url>
-          <line>101</line>
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/email/webserver/SQLConClass.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/email/webserver/SQLConClass.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="94" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

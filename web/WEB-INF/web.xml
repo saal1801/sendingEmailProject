@@ -18,19 +18,31 @@
 
     <context-param>
         <param-name>userName</param-name>
-        <param-value>ab56213dc75004</param-value>
+        <param-value>793b611ba6b559</param-value>
     </context-param>
 
     <context-param>
         <param-name>password</param-name>
-        <param-value>4d957bd8286db4</param-value>
+        <param-value>c0de1865fb6c62</param-value>
     </context-param>
 
     <welcome-file-list>
-        <welcome-file>EmailPage.html</welcome-file>
+        <welcome-file>resources.web.EmailPage.html</welcome-file>
     </welcome-file-list>
-    
-    
+
+    <context-param>
+        <param-name>quartz:wait-on-shutdown</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+
+    <listener>
+        <listener-class>
+            main.java.webserver.MyServletContextListener
+        </listener-class>
+    </listener>
+
+
     <listener>
         <listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>
     </listener>
@@ -40,12 +52,12 @@
         <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
         <init-param>
             <param-name>javax.ws.rs.Application</param-name>
-            <param-value>main.java.com.email.webserver.MyApplication</param-value>
+            <param-value>main.java.webserver.MyApplication</param-value>
         </init-param>
     </servlet>
     <context-param>
         <param-name>resteasy.resources</param-name>
-        <param-value>main.java.com.email.webserver.EmailRestServer</param-value>
+        <param-value>main.java.webserver.EmailRestServer</param-value>
     </context-param>
 
 

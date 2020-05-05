@@ -2,7 +2,7 @@ package main.java.webserver;
 
 
 import main.java.DOAService.SQLConClass;
-import main.java.dao.EmailMessage;
+import main.java.dto.EmailMessage;
 import main.java.utils.JsonConverter;
 
 import javax.ws.rs.Consumes;

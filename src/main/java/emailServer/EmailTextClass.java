@@ -2,19 +2,19 @@ package main.java.emailServer;
 
 
 import main.java.DOAService.SQLConClass;
-import main.java.dao.EmailMessage;
+import main.java.dto.EmailMessage;
 
 import javax.mail.*;
-import javax.mail.internet.*;
-import java.io.BufferedReader;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
-import java.util.logging.Logger;
 
 public class EmailTextClass {
     //Singleton instance

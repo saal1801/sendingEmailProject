@@ -2,7 +2,7 @@ package main.java.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import main.java.dao.EmailMessage;
+import main.java.dto.EmailMessage;
 
 import java.lang.reflect.Type;
 

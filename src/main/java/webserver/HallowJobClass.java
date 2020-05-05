@@ -1,7 +1,7 @@
 package main.java.webserver;
 
 import main.java.DOAService.SQLConClass;
-import main.java.dao.EmailMessage;
+import main.java.dto.EmailMessage;
 import main.java.emailServer.EmailTextClass;
 import org.quartz.*;
 import org.slf4j.LoggerFactory;

@@ -1,6 +1,7 @@
 package main.java.DOAService;
 
-import main.java.dao.EmailMessage;
+
+import main.java.dto.EmailMessage;
 
 import java.util.UUID;
 

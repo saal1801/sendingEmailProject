@@ -1,4 +1,5 @@
-package main.java.dao;
+
+package main.java.dto;
 
 import main.java.DOAService.SQLConClass;
 

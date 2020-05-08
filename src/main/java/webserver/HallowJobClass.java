@@ -19,7 +19,6 @@ public class HallowJobClass implements Job {
 
         System.out.println("Polling for emails to send" );
 
-        String nullSting = null;
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -29,10 +28,8 @@ public class HallowJobClass implements Job {
             ResultSet sprs = callableStatement.executeQuery();
             System.out.println("call:SP::::: " + sprs);
 
-            nullSting.split("/");
                 emailTextClass.sendEmail(emailMessage);
             } catch (IllegalArgumentException | NullPointerException  | MessagingException | ParseException | IOException | SQLException | ClassNotFoundException e) {
-            System.out.println("Waiting for getting value input");
             e.printStackTrace();
 
         }

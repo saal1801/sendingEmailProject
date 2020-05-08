@@ -4,6 +4,7 @@ import main.java.DOAService.SQLConClass;
 import main.java.dto.EmailMessage;
 import main.java.emailServer.EmailTextClass;
 import org.quartz.*;
+
 import javax.mail.*;
 import java.io.IOException;
 import java.sql.*;
@@ -17,19 +18,19 @@ public class HallowJobClass implements Job {
     @Override
     public void execute(JobExecutionContext jobExecutionContext) {
 
-        System.out.println("Polling for emails to send" );
+        System.out.println("Polling for emails to send");
 
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             Connection conn = DriverManager.getConnection(SQLConClass.url, SQLConClass.user, SQLConClass.password);
-            CallableStatement callableStatement  = conn.prepareCall("{CALL GetEmailPro()}");
+            CallableStatement callableStatement = conn.prepareCall("{CALL GetEmailPro()}");
             ResultSet sprs = callableStatement.executeQuery();
             System.out.println("call:SP::::: " + sprs);
 
-                emailTextClass.sendEmail(emailMessage);
-            } catch (IllegalArgumentException | NullPointerException  | MessagingException | ParseException | IOException | SQLException | ClassNotFoundException e) {
+            emailTextClass.sendEmail(emailMessage);
+        } catch (IllegalArgumentException | NullPointerException | MessagingException | ParseException | IOException | SQLException | ClassNotFoundException e) {
             e.printStackTrace();
 
         }

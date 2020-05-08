@@ -1,7 +1,6 @@
 package main.java.webserver;
 
 
-
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 import java.util.HashSet;
@@ -26,7 +25,7 @@ public class MyApplication extends Application {
     }
 
     @Override
-    public Set<Object> getSingletons(){
+    public Set<Object> getSingletons() {
         return this.singletons;
     }
 

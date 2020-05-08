@@ -1,14 +1,8 @@
 package main.java.dto;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Type;
-
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import java.net.HttpURLConnection;
-import java.util.UUID;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
@@ -18,52 +12,34 @@ public class EmailMessage {
     public String from;
     public String to;
     public String subject;
-    public  String body;
+    public String body;
 
     private boolean success;
-    private String jobid;
-    private String jobGroup;
-
 
     public String msg;
-    public int status;
+    // --Commented out by Inspection (2020-05-08 10:48):public int status;
     public String authTOken;
-    public String sessionId;
+    // --Commented out by Inspection (2020-05-08 10:48):public String sessionId;
 
     //public LocalDateTime dateTime;
     //private ZoneId timeZone;
 
-    public EmailMessage(){
+    public EmailMessage() {
     }
 
-    public EmailMessage(int code, String message) {
-        this.status = code;
-        this.msg = message;
-    }
-
-    public EmailMessage( boolean success, String jobId, String jobGroup, String msg) {
-        this.from = from;
-        this.success = success;
-        this.jobid = jobId;
-        this.jobGroup = jobGroup;
-        this.msg = msg;
-    }
 
     public EmailMessage(boolean success, String msg) {
         this.success = success;
         this.msg = msg;
     }
 
-    public static int STATUS_OK = HttpURLConnection.HTTP_ACCEPTED;
-    public static int WRONG_EMAIL_ADDRESS_STATUS = HttpURLConnection.HTTP_UNAUTHORIZED;
+    public static final int STATUS_OK = HttpURLConnection.HTTP_ACCEPTED;
+    public static final int WRONG_EMAIL_ADDRESS_STATUS = HttpURLConnection.HTTP_UNAUTHORIZED;
 
     public String getAuthTOken() {
         return authTOken;
     }
 
-    public void setAuthTOken(String authTOken) {
-        this.authTOken = authTOken;
-    }
 
     public String getFrom() {
         return from;
@@ -97,54 +73,6 @@ public class EmailMessage {
         this.body = body;
     }
 
-    public boolean isSuccess() {
-        return success;
-    }
-
-    public void setSuccess(boolean success) {
-        this.success = success;
-    }
-
-    public String getJobid() {
-        return jobid;
-    }
-
-    public void setJobid(String jobid) {
-        this.jobid = jobid;
-    }
-
-    public String getJobGroup() {
-        return jobGroup;
-    }
-
-    public void setJobGroup(String jobGroup) {
-        this.jobGroup = jobGroup;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
-    public String getSessionId() {
-        return sessionId;
-    }
-
-    public void setSessionId(String sessionId) {
-        this.sessionId = sessionId;
-    }
-
     @Override
     public String toString() {
         return "EmailMessage{" +
@@ -153,12 +81,8 @@ public class EmailMessage {
                 ", subject='" + subject + '\'' +
                 ", body='" + body + '\'' +
                 ", success=" + success +
-                ", jobid='" + jobid + '\'' +
-                ", jobGroup='" + jobGroup + '\'' +
                 ", msg='" + msg + '\'' +
-                ", status=" + status +
                 ", authTOken='" + authTOken + '\'' +
-                ", sessionId='" + sessionId + '\'' +
                 '}';
     }
 }

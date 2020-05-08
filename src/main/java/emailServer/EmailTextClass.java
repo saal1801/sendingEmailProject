@@ -51,13 +51,13 @@ public class EmailTextClass {
 
 
         // creates a new session, no Authenticator (will connect() later)
-        Session session = Session.getInstance(properties,authenticator);
+        Session session = Session.getInstance(properties, authenticator);
 
         // creates a new e-mail message
         Message msg = new MimeMessage(session);
 
         msg.setFrom(new InternetAddress(emailMessage.getFrom()));
-        InternetAddress[] toAddresses = { new InternetAddress(emailMessage.getTo()) };
+        InternetAddress[] toAddresses = {new InternetAddress(emailMessage.getTo())};
         msg.setRecipients(Message.RecipientType.TO, toAddresses);
         msg.setSubject(emailMessage.getSubject());
         msg.setSentDate(date);
@@ -73,7 +73,7 @@ public class EmailTextClass {
 
         MimeBodyPart mimeBodyPart = new MimeBodyPart();
         mimeBodyPart.setContent(HTMLmsg, "text/html");
-        mimeBodyPart.setText(HTMLmsg,"utf-8", "html" );
+        mimeBodyPart.setText(HTMLmsg, "utf-8", "html");
         multipart.addBodyPart(mimeBodyPart);
 
         MimeBodyPart attachment = new MimeBodyPart();

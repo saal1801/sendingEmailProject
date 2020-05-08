@@ -60,9 +60,9 @@ public class SQLConClass {
             emailMessage.setBody(rs.getString("body"));
 
             System.out.println(rs.getString("EmailSender") +
-            rs.getString("EmailReceiver") +
-            rs.getString("subject") +
-            rs.getString("body"));
+                    rs.getString("EmailReceiver") +
+                    rs.getString("subject") +
+                    rs.getString("body"));
 
         }
         conn.close();

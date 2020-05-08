@@ -18,7 +18,7 @@ import java.util.Properties;
 
 public class EmailTextClass {
     //Singleton instance
-    private SQLConClass sqlConClass = new SQLConClass();
+    private final SQLConClass sqlConClass = new SQLConClass();
 
     public void sendEmail(EmailMessage emailMessage) throws
             MessagingException, ParseException, IOException, SQLException, ClassNotFoundException {
@@ -37,7 +37,7 @@ public class EmailTextClass {
 
         Properties properties = new Properties();
         properties.put("mail.smtp.host", host); //"mail.pop3.host",pop3Host
-        properties.put("mail.smtp.port", String.valueOf(port)); //"mail.pop3.port",pop3port
+        properties.put("mail.smtp.port", port); //"mail.pop3.port",pop3port
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.starttls.enable", "true"); //"mail.pop3.starttls.enable","true"
         properties.put("mail.smtp.user", userName);

@@ -4,9 +4,6 @@ package main.java.DOAService;
 import main.java.dto.EmailMessage;
 
 import java.sql.*;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class SQLConClass {
 
@@ -17,12 +14,8 @@ public class SQLConClass {
     public static final String user = "root";
     public static final String password = "password";
 
-    public static void insertEmail(EmailMessage emailMessage) throws ParseException, ClassNotFoundException, SQLException {
+    public static void insertEmail(EmailMessage emailMessage) throws ClassNotFoundException, SQLException {
 
-
-        SimpleDateFormat simplformat = new SimpleDateFormat("dd/MM/yyyy'T'hh:mm:ss.SSS'Z' a");
-        String strDate = simplformat.format(new Date());
-        Date date = simplformat.parse(strDate);
 
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection conn = DriverManager.getConnection(url, user, password);
@@ -45,6 +38,7 @@ public class SQLConClass {
         }
 
         conn.close();
+        assert stmt != null;
         stmt.close();
     }
 

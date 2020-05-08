@@ -23,7 +23,7 @@ public class MyServletContextListener implements ServletContextListener {
                 .newTrigger()
                 .withIdentity(jobDetail.getKey().getName(), "triggerGroup")
                 .startNow()
-                .withSchedule(CronScheduleBuilder.cronSchedule("0/5 * * * * ?"))
+                .withSchedule(CronScheduleBuilder.cronSchedule("0/10 * * * * ?"))
                 /* SimpleScheduleBuilder.simpleSchedule()
                  .withIntervalInSeconds(4)
                  .repeatForever())*/

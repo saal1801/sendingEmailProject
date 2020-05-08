@@ -1,51 +1,22 @@
-/*DROP TABLE IF EXISTS emailpro;
+
+DROP TABLE IF EXISTS emailpro;
 CREATE DATABASE EMAILDB;
 USE EMAILDB;
-CREATE TABLE IF NOT EXISTS emailpro(
-	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-    attempts INT(6) default 0,
-    from_email VARCHAR(30) NOT NULL,
-    to_email VARCHAR (30) NOT NULL,
-    status VARCHAR(30) NOT NULL default"PENDING",
-    Received_Date  TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    status_Attempt VARCHAR(30) ,
-    Next_Attempt  TIMESTAMP ,
-    Sent_Date TIMESTAMP
-) ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `emailpro`(
+	`id` VARCHAR(255),
+	`attempts` INT(6) default 0,
+    `EmailSender` VARCHAR(30) ,
+    `EmailReceiver` VARCHAR (30) ,
+    `status` VARCHAR(30) NOT NULL DEFAULT "PENDING" ,
+    `subject` VARCHAR(30) ,
+    `body` VARCHAR (255) ,
+    `Received_Date`  TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    `Next_Attempt`  TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY(id)
+    -- Sent_Date TIMESTAMP
+) ENGINE = InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
- INSERT INTO emailpro (`from_email`, `to_email`) VALUE ('fromsarko@gmail.com', 'tosarko@gmail.com');*/
+ -- INSERT INTO emailpro (`status`) VALUE ('PENDING');
 
- ---------------------------------------------------------------
- --Stored procedures
 
- /*CREATE DEFINER=`root`@`localhost` PROCEDURE `GetEmailPro`()
- BEGIN
 
- 	DECLARE temp_ID INT;
-
- 	SELECT id
-     FROM emaildb.emailpro
- 	WHERE Received_Date < now()
-     -- AND status in ('PENDING')
-     AND attempts <= 5
-     LIMIT 1
-     INTO temp_ID;
-
-     UPDATE emaildb.emailpro
- 		SET Received_Date = TIMESTAMPADD(MINUTE, 1, now()), attempts = attempts+1
-         -- , status = "SENT"
-         WHERE id = temp_ID;
-
-     SELECT * FROM emaildb.emailpro where id = temp_ID;
-     /*CASE temp_ID
-         WHEN 'PENDING' THEN
-         UPDATE temp_ID -- (`email_status`) VALUE ('sending');
-            SET status = 'SENDING';
- 		WHEN 'SENDING' THEN
-         UPDATE temp_ID -- (`email_status`) VALUE ('send');
-            SET status = 'SEND';
-         ELSE
-         UPDATE temp_ID -- (`email_status`) VALUE ('failed-retry-policy');
-            SET status = 'FAILED-RETRY-POLICY';
-     END CASE;*/
- --END

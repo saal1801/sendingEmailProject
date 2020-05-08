@@ -1,0 +1,18 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetEmailPro`()
+BEGIN
+
+	DECLARE temp_ID varchar(255);
+
+	SELECT id
+    FROM emaildb.emailpro 
+	WHERE Next_Attempt < now() 
+	AND status in ('PENDING') 
+    AND attempts < 5 
+	LIMIT 1
+    INTO temp_ID;
+    
+    UPDATE emaildb.emailpro 
+    SET Next_Attempt = TIMESTAMPADD(SECOND, 5, now()), attempts = attempts + 1
+    WHERE id = temp_ID;
+
+END

@@ -64,6 +64,11 @@
             <artifactId>resteasy-client</artifactId>
             <version>4.5.3.Final</version>
         </dependency>
+        <dependency>
+            <groupId>jakarta.ejb</groupId>
+            <artifactId>jakarta.ejb-api</artifactId>
+            <version>3.2.6</version>
+        </dependency>
     </dependencies>
     <build>
         <sourceDirectory>src</sourceDirectory>

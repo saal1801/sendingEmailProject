@@ -3,12 +3,13 @@ package main.java.dto;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import javax.persistence.Entity;
 import java.net.HttpURLConnection;
+import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
 public class EmailMessage {
 
-
+public static final EmailMessage INSTANCE = new EmailMessage();
     public String from;
     public String to;
     public String subject;
@@ -17,29 +18,29 @@ public class EmailMessage {
     private boolean success;
 
     public String msg;
-    // --Commented out by Inspection (2020-05-08 10:48):public int status;
-    public String authTOken;
-    // --Commented out by Inspection (2020-05-08 10:48):public String sessionId;
+    public String authTOkenId;
 
-    //public LocalDateTime dateTime;
-    //private ZoneId timeZone;
 
     public EmailMessage() {
     }
-
 
     public EmailMessage(boolean success, String msg) {
         this.success = success;
         this.msg = msg;
     }
 
+
     public static final int STATUS_OK = HttpURLConnection.HTTP_ACCEPTED;
     public static final int WRONG_EMAIL_ADDRESS_STATUS = HttpURLConnection.HTTP_UNAUTHORIZED;
 
-    public String getAuthTOken() {
-        return authTOken;
+
+    public String getAuthTOkenId() {
+        return authTOkenId;
     }
 
+    public void setAuthTOkenId(String authTOkenId) {
+        this.authTOkenId = authTOkenId;
+    }
 
     public String getFrom() {
         return from;
@@ -73,16 +74,4 @@ public class EmailMessage {
         this.body = body;
     }
 
-    @Override
-    public String toString() {
-        return "EmailMessage{" +
-                ", from='" + from + '\'' +
-                ", to='" + to + '\'' +
-                ", subject='" + subject + '\'' +
-                ", body='" + body + '\'' +
-                ", success=" + success +
-                ", msg='" + msg + '\'' +
-                ", authTOken='" + authTOken + '\'' +
-                '}';
-    }
 }

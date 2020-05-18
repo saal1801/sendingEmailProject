@@ -1,15 +1,14 @@
 package main.java.emailServer;
 
 
-import main.java.DOAService.SQLConClass;
+import com.sun.mail.smtp.SMTPTransport;
+import main.java.DAOService.SQLConClass;
 import main.java.dto.EmailMessage;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
-import java.io.IOException;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -17,13 +16,11 @@ import java.util.Date;
 import java.util.Properties;
 
 public class EmailTextClass {
-    //Singleton instance
-    private final SQLConClass sqlConClass = new SQLConClass();
 
     public void sendEmail(EmailMessage emailMessage) throws
-            MessagingException, ParseException, IOException, SQLException, ClassNotFoundException {
+            MessagingException, ParseException, SQLException, ClassNotFoundException {
 
-        sqlConClass.readEmail(emailMessage);
+        // sqlConClass.readEmail(emailMessage);
 
         final String userName = "49c39ef2c1d586";
         final String password = "1af7298ecffac8";
@@ -62,38 +59,41 @@ public class EmailTextClass {
         msg.setSubject(emailMessage.getSubject());
         msg.setSentDate(date);
         System.out.println("Sent Date " + strDate);
-        //System.out.println("Receiving date " + msg.getReceivedDate());
+
         // set plain text message
         msg.setText(emailMessage.getBody());
-        msg.setContent("<div><span style=\"color:#57aaca;\">c</span><span style=\"color:#57aec5;\">o</span><span style=\"color:#57b2c0;\">l</span><span style=\"color:#57b6ba;\">o</span><span style=\"color:#57bbb5;\">r</span><span style=\"color:#56bfb0;\">f</span><span style=\"color:#56c3ab;\">u</span><span style=\"color:#56c7a5;\">l</span><span style=\"color:#56cba0;\"> </span><span style=\"color:#5ec3ab;\">m</span><span style=\"color:#65bbb6;\">e</span><span style=\"color:#6db3c1;\">s</span><span style=\"color:#75accd;\">s</span><span style=\"color:#7da4d8;\">a</span><span style=\"color:#849ce3;\">g</span><span style=\"color:#8c94ee;\">e</span></div>", "text/html");
-
-        String HTMLmsg = "First HTML message";
-        byte[] attachmentData = null;
-        Multipart multipart = new MimeMultipart();
-
-        MimeBodyPart mimeBodyPart = new MimeBodyPart();
-        mimeBodyPart.setContent(HTMLmsg, "text/html");
-        mimeBodyPart.setText(HTMLmsg, "utf-8", "html");
-        multipart.addBodyPart(mimeBodyPart);
-
-        MimeBodyPart attachment = new MimeBodyPart();
-
-        String fileName = "C:\\Users\\sarko.ali\\Desktop\\text.pdf";
-        //DataSource dataSource = new FileDataSource(fileName);
-        //attachment.setDataHandler(new DataHandler(dataSource));
-        attachment.attachFile(fileName);
-        attachment.setFileName(fileName);
-        attachment.setContent("<h1>Attached GIF</h1> src='https://media.giphy.com/media/l4JyQqyt9S1WTiE6c/giphy.gif'>", "text/html");
-        multipart.addBodyPart(attachment);
-
-        msg.setContent(multipart);
 
         // sends the e-mail
-        Transport t = session.getTransport("smtp");
+        SMTPTransport t = (SMTPTransport) session.getTransport("smtp");
         t.connect(userName, password);
+        //t.setReportSuccess(true);
         t.sendMessage(msg, msg.getAllRecipients());
+        String response = t.getLastServerResponse().trim();
+        int code = t.getLastReturnCode();
+
+
+        if (code == 250) {
+            PreparedStatement stmt = SQLConClass.conn.prepareStatement("UPDATE emailpro SET status = 'SENT' where id = ?");
+            stmt.setString(1,emailMessage.authTOkenId);
+            if (stmt != null) {
+
+
+                int sent = stmt.executeUpdate();
+                System.out.println("Response: " + "sent");
+
+            }
+
+        } else {
+
+            //PreparedStatement stmt = SQLConClass.conn.prepareStatement("UPDATE emailpro SET (status) value ('FAILED') ORDER BY ID DESC LIMIT 1");
+            PreparedStatement stmt = SQLConClass.conn.prepareStatement("UPDATE emailpro SET status = 'FAILED' where id = ?");
+            stmt.setString(1,emailMessage.authTOkenId);
+
+            int failed = stmt.executeUpdate();
+            System.out.println("Response: " + "failed");
+
+
+        }
         t.close();
-
     }
-
 }

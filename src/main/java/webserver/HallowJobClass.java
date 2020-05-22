@@ -27,7 +27,7 @@ public class HallowJobClass implements Job {
         try {
             CallableStatement callableStatement = SQLConClass.conn.prepareCall("{CALL GetEmailPro()}");
             ResultSet sprs = callableStatement.executeQuery();
-            if(sprs.next()){
+            if (sprs.next()) {
 
                 emailMessage.setFrom(sprs.getString("EmailSender"));
                 emailMessage.setTo(sprs.getString("EmailReceiver"));

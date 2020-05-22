@@ -1,34 +1,21 @@
 package main.java.dto;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-import javax.persistence.Entity;
+
 import java.net.HttpURLConnection;
-import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Entity
 public class EmailMessage {
 
-public static final EmailMessage INSTANCE = new EmailMessage();
+    public static final EmailMessage INSTANCE = new EmailMessage();
+    public String authTOkenId;
     public String from;
     public String to;
     public String subject;
     public String body;
 
-    private boolean success;
-
-    public String msg;
-    public String authTOkenId;
-
-
     public EmailMessage() {
     }
-
-    public EmailMessage(boolean success, String msg) {
-        this.success = success;
-        this.msg = msg;
-    }
-
 
     public static final int STATUS_OK = HttpURLConnection.HTTP_ACCEPTED;
     public static final int WRONG_EMAIL_ADDRESS_STATUS = HttpURLConnection.HTTP_UNAUTHORIZED;
@@ -74,4 +61,14 @@ public static final EmailMessage INSTANCE = new EmailMessage();
         this.body = body;
     }
 
+
+    @Override
+    public String toString() {
+        return "EmailMessage{" +
+                "from='" + from + '\'' +
+                ", to='" + to + '\'' +
+                ", subject='" + subject + '\'' +
+                ", body='" + body + '\'' +
+                '}';
+    }
 }

@@ -4,18 +4,14 @@ package main.java.DAOService;
 import main.java.dto.EmailMessage;
 
 import java.sql.*;
-import java.util.HashMap;
-import java.util.Map;
 
 public class SQLConClass {
-    public static final SQLConClass INSTANCE = new SQLConClass();
 
     public static final String url = "jdbc:mysql://localhost:3306/emaildb?autoReconnect=true&useSSL=true";
     public static final String user = "root";
     public static final String password = "password";
 
     public static Connection conn;
-
 
 
     static {
@@ -27,8 +23,6 @@ public class SQLConClass {
         }
     }
 
-
-    private EmailMessage emailMessage = new EmailMessage();
 
     public static void insertEmail(EmailMessage emailMessage) throws SQLException {
 
@@ -44,48 +38,67 @@ public class SQLConClass {
             int rowUpdate = stmt.executeUpdate();
             System.out.println(" SQL row updated::::::: " + rowUpdate);
         }
-
     }
 
-    public EmailMessage getById(String id) throws SQLException {
+    public static EmailMessage getById(String id) throws SQLException {
 
-        Map<String, EmailMessage> param = new HashMap<>();
+        String sql = "SELECT id, EmailSender, EmailReceiver, subject, body" + " FROM emaildb.emailpro WHERE id=?"; //  '" + id + "'"
+        PreparedStatement stmt = SQLConClass.conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        stmt.setString(1, id);
 
-        String sql = "SELECT * FROM emaildb.emailpro where id='" + id +"'";
+        ResultSet rs = stmt.executeQuery();
+        EmailMessage emailMessage = new EmailMessage();
 
-
-
-       /* for ( Map.Entry<String,Object> entry: param.entrySet()) {
-            param.put("id", id);
-          //Object object = entry.getKey();   
-        if (entry.getValue() instanceof String) {
-            entry.getValue().equals(entry.getKey());
-        }else if (entry.getValue() instanceof Class){
-            System.out.println(("Class " + ((Class)entry.getValue()).getClass()));
-        }else {
-            throw new IllegalStateException("Expecting either String or Class value");
-        }
-    }*/
-
-        Statement stmt = SQLConClass.conn.createStatement();
-        ResultSet rs = stmt.executeQuery(sql);
-
-        while (rs.next()) {
+        if (rs.next()) {
+            emailMessage.setAuthTOkenId(id);
             emailMessage.setFrom(rs.getString("EmailSender"));
             emailMessage.setTo(rs.getString("EmailReceiver"));
             emailMessage.setSubject(rs.getString("subject"));
             emailMessage.setBody(rs.getString("body"));
-
-            param.put(rs.getString("id"),emailMessage);
-
+            return emailMessage;
+        } else {
+            rs.close();
+            stmt.close();
+            if (conn != null) conn.close();
+            return null;
         }
-        System.out.println(param.containsValue("id"));
-        for (EmailMessage email: param.values()) {
-            if (email.equals(id))
-            return email;
-        }
-    return new EmailMessage();
     }
 
+    public static EmailMessage UpdateEmail(String id, EmailMessage emailMessage1) throws SQLException {
+
+        String sql = "SELECT EmailSender=?, EmailReceiver=?, subject=?, body=?" + " FROM emaildb.emailpro WHERE id=?"; //  '" + id + "'"
+        PreparedStatement stmt = SQLConClass.conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        stmt.setString(1, id);
+
+        ResultSet rs = stmt.executeQuery();
+        EmailMessage emailMessage = new EmailMessage();
+
+        if (rs.next()) {
+            emailMessage.setAuthTOkenId(id);
+            emailMessage.setFrom(rs.getString("EmailSender"));
+            emailMessage.setTo(rs.getString("EmailReceiver"));
+            emailMessage.setSubject(rs.getString("subject"));
+            emailMessage.setBody(rs.getString("body"));
+            return emailMessage;
+        }
+
+        if (emailMessage1.getAuthTOkenId() == id){
+            emailMessage.setFrom(emailMessage1.getFrom());
+            stmt.setString(1, emailMessage1.getFrom());
+            stmt.setString(2, emailMessage1.getTo());
+            stmt.setString(3, emailMessage1.getSubject());
+            stmt.setString(4, emailMessage1.getBody());
+            stmt.executeQuery();
+            return emailMessage;
+
+
+        }else {
+                rs.close();
+                stmt.close();
+                if (conn != null) conn.close();
+                return null;
+        }
+
+    }
 }
 

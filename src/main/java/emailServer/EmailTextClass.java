@@ -74,25 +74,21 @@ public class EmailTextClass {
 
         if (code == 250) {
             PreparedStatement stmt = SQLConClass.conn.prepareStatement("UPDATE emailpro SET status = 'SENT' where id = ?");
-            stmt.setString(1,emailMessage.authTOkenId);
+            stmt.setString(1, emailMessage.authTOkenId);
             if (stmt != null) {
-
 
                 int sent = stmt.executeUpdate();
                 System.out.println("Response: " + "sent");
-
             }
 
         } else {
 
             //PreparedStatement stmt = SQLConClass.conn.prepareStatement("UPDATE emailpro SET (status) value ('FAILED') ORDER BY ID DESC LIMIT 1");
             PreparedStatement stmt = SQLConClass.conn.prepareStatement("UPDATE emailpro SET status = 'FAILED' where id = ?");
-            stmt.setString(1,emailMessage.authTOkenId);
+            stmt.setString(1, emailMessage.authTOkenId);
 
             int failed = stmt.executeUpdate();
             System.out.println("Response: " + "failed");
-
-
         }
         t.close();
     }

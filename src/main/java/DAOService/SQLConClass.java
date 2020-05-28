@@ -4,6 +4,8 @@ package main.java.DAOService;
 import main.java.dto.EmailMessage;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SQLConClass {
 
@@ -42,12 +44,13 @@ public class SQLConClass {
 
     public static EmailMessage getById(String id) throws SQLException {
 
+        EmailMessage emailMessage;
         String sql = "SELECT id, EmailSender, EmailReceiver, subject, body" + " FROM emaildb.emailpro WHERE id=?"; //  '" + id + "'"
         PreparedStatement stmt = SQLConClass.conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
         stmt.setString(1, id);
 
         ResultSet rs = stmt.executeQuery();
-        EmailMessage emailMessage = new EmailMessage();
+        emailMessage = new EmailMessage();
 
         if (rs.next()) {
             emailMessage.setAuthTOkenId(id);
@@ -64,41 +67,24 @@ public class SQLConClass {
         }
     }
 
-    public static EmailMessage UpdateEmail(String id, EmailMessage emailMessage1) throws SQLException {
+    public static EmailMessage updateEmail(String id, EmailMessage emailMessage1) throws SQLException {
 
-        String sql = "SELECT EmailSender=?, EmailReceiver=?, subject=?, body=?" + " FROM emaildb.emailpro WHERE id=?"; //  '" + id + "'"
-        PreparedStatement stmt = SQLConClass.conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        PreparedStatement stmt = SQLConClass.conn.prepareStatement("UPDATE emaildb.emailpro SET EmailSender=?, EmailReceiver=?, subject=?, body=? WHERE id=?");
+        stmt.setString(1, emailMessage1.from);
+        stmt.setString(2, emailMessage1.to);
+        stmt.setString(3, emailMessage1.subject);
+        stmt.setString(4, emailMessage1.body);
+        stmt.setString(5, id);
+        stmt.executeUpdate();
+        return null;
+    }
+
+    public static EmailMessage deleteEmail(String id) throws SQLException {
+
+        PreparedStatement stmt = SQLConClass.conn.prepareStatement("DELETE FROM emaildb.emailpro WHERE id=?");
         stmt.setString(1, id);
-
-        ResultSet rs = stmt.executeQuery();
-        EmailMessage emailMessage = new EmailMessage();
-
-        if (rs.next()) {
-            emailMessage.setAuthTOkenId(id);
-            emailMessage.setFrom(rs.getString("EmailSender"));
-            emailMessage.setTo(rs.getString("EmailReceiver"));
-            emailMessage.setSubject(rs.getString("subject"));
-            emailMessage.setBody(rs.getString("body"));
-            return emailMessage;
-        }
-
-        if (emailMessage1.getAuthTOkenId() == id){
-            emailMessage.setFrom(emailMessage1.getFrom());
-            stmt.setString(1, emailMessage1.getFrom());
-            stmt.setString(2, emailMessage1.getTo());
-            stmt.setString(3, emailMessage1.getSubject());
-            stmt.setString(4, emailMessage1.getBody());
-            stmt.executeQuery();
-            return emailMessage;
-
-
-        }else {
-                rs.close();
-                stmt.close();
-                if (conn != null) conn.close();
-                return null;
-        }
-
+        stmt.executeUpdate();
+        return null;
     }
 }
 

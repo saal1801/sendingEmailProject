@@ -8,17 +8,18 @@ import main.java.dto.EmailMessage;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
 import java.sql.SQLException;
 import java.util.UUID;
 
 import static main.java.dto.EmailMessage.STATUS_OK;
 import static main.java.dto.EmailMessage.WRONG_EMAIL_ADDRESS_STATUS;
 
-//import main.java.DAOService.StreamingOutput;
-//import org.onosproject.app.ApplicationAdminService;
 
 @Path("/rest")
 public class EmailRestServer {
+
+    private UriInfo uriInfo;
 
     @POST
     @Path("/email")
@@ -55,37 +56,25 @@ public class EmailRestServer {
     @Path("/email/{id}")
     @Consumes("application/json")
     @Produces("application/json")
-    public Response updateEmail(@PathParam("id") String id, @QueryParam("emailMessage") EmailMessage emailMessage) throws SQLException {
+    public Response updateEmail(@PathParam("id") String id, EmailMessage emailMessage) throws SQLException {
 
-        //EmailMessage update = new EmailMessage();
-        EmailMessage current = SQLConClass.UpdateEmail(id, emailMessage);
+        EmailMessage current = SQLConClass.updateEmail(id, emailMessage);
 
         if(current == null){
             return Response.status(Response.Status.NOT_FOUND).build();
         }
-
-     /*   assert current != null;
-        current.setFrom(update.getFrom());
-        current.setTo(update.getTo());
-        current.setSubject(update.getSubject());
-        current.setBody(update.getBody());*/
-
-        return Response.status(STATUS_OK, current.getAuthTOkenId()).entity(current).build();
+        return Response.status(STATUS_OK,emailMessage.getAuthTOkenId()).entity(current).build();
     }
-
-
 
     @DELETE
     @Path("/email/{id}")
     @Consumes("application/json")
     public Response deleteEmail(@PathParam("id") String id) throws SQLException {
 
-        EmailMessage current = SQLConClass.getById(id);
+        EmailMessage current = SQLConClass.deleteEmail(id);
         if(current == null){
             return Response.status(Response.Status.NOT_FOUND).build();
         }
-        //current.cance();
-        //SQLConClass.conn.close();
         return Response.status(STATUS_OK, current.getAuthTOkenId()).entity(id).build();
     }
 

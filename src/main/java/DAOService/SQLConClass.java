@@ -4,8 +4,6 @@ package main.java.DAOService;
 import main.java.dto.EmailMessage;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class SQLConClass {
 
@@ -76,6 +74,9 @@ public class SQLConClass {
         stmt.setString(4, emailMessage1.body);
         stmt.setString(5, id);
         stmt.executeUpdate();
+
+        stmt.close();
+        if (conn != null) conn.close();
         return null;
     }
 
@@ -84,6 +85,9 @@ public class SQLConClass {
         PreparedStatement stmt = SQLConClass.conn.prepareStatement("DELETE FROM emaildb.emailpro WHERE id=?");
         stmt.setString(1, id);
         stmt.executeUpdate();
+        
+        stmt.close();
+        if (conn != null) conn.close();
         return null;
     }
 }

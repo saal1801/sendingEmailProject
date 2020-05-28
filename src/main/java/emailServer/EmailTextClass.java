@@ -18,7 +18,7 @@ import java.util.Properties;
 public class EmailTextClass {
 
     public void sendEmail(EmailMessage emailMessage) throws
-            MessagingException, ParseException, SQLException, ClassNotFoundException {
+            MessagingException, ParseException, SQLException {
 
         // sqlConClass.readEmail(emailMessage);
 
@@ -68,7 +68,7 @@ public class EmailTextClass {
         t.connect(userName, password);
         //t.setReportSuccess(true);
         t.sendMessage(msg, msg.getAllRecipients());
-        String response = t.getLastServerResponse().trim();
+        //String response = t.getLastServerResponse().trim();
         int code = t.getLastReturnCode();
 
 
@@ -77,7 +77,7 @@ public class EmailTextClass {
             stmt.setString(1, emailMessage.authTOkenId);
             if (stmt != null) {
 
-                int sent = stmt.executeUpdate();
+                stmt.executeUpdate();
                 System.out.println("Response: " + "sent");
             }
 
@@ -87,7 +87,7 @@ public class EmailTextClass {
             PreparedStatement stmt = SQLConClass.conn.prepareStatement("UPDATE emailpro SET status = 'FAILED' where id = ?");
             stmt.setString(1, emailMessage.authTOkenId);
 
-            int failed = stmt.executeUpdate();
+            stmt.executeUpdate();
             System.out.println("Response: " + "failed");
         }
         t.close();

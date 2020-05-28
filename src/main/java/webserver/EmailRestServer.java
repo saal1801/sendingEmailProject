@@ -8,7 +8,6 @@ import main.java.dto.EmailMessage;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriInfo;
 import java.sql.SQLException;
 import java.util.UUID;
 
@@ -18,8 +17,6 @@ import static main.java.dto.EmailMessage.WRONG_EMAIL_ADDRESS_STATUS;
 
 @Path("/rest")
 public class EmailRestServer {
-
-    private UriInfo uriInfo;
 
     @POST
     @Path("/email")

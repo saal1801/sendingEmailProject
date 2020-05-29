@@ -36,7 +36,7 @@ public class HallowJobClass implements Job {
                 emailTextClass.sendEmail(emailMessage);
             }
 
-        } catch (IllegalArgumentException | NullPointerException | MessagingException | ParseException | SQLException | ClassNotFoundException e) {
+        } catch (IllegalArgumentException | NullPointerException | MessagingException | ParseException | SQLException e) {
             e.printStackTrace();
 
         }

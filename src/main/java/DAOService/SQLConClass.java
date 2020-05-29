@@ -75,20 +75,20 @@ public class SQLConClass {
         stmt.setString(5, id);
         stmt.executeUpdate();
 
-        stmt.close();
-        if (conn != null) conn.close();
-        return null;
+        emailMessage1 = SQLConClass.getById(id);
+
+        //stmt.close();
+        return emailMessage1;
     }
 
-    public static EmailMessage deleteEmail(String id) throws SQLException {
+    public static String deleteEmail(String id) throws SQLException {
 
         PreparedStatement stmt = SQLConClass.conn.prepareStatement("DELETE FROM emaildb.emailpro WHERE id=?");
         stmt.setString(1, id);
         stmt.executeUpdate();
-        
+
         stmt.close();
-        if (conn != null) conn.close();
-        return null;
+        return "Email is deleted successfully " + id;
     }
 }
 

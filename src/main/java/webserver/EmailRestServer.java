@@ -55,12 +55,12 @@ public class EmailRestServer {
     @Produces("application/json")
     public Response updateEmail(@PathParam("id") String id, EmailMessage emailMessage) throws SQLException {
 
-        EmailMessage current = SQLConClass.updateEmail(id, emailMessage);
+        emailMessage = SQLConClass.updateEmail(id, emailMessage);
 
-        if(current == null){
+        if(emailMessage == null){
             return Response.status(Response.Status.NOT_FOUND).build();
         }
-        return Response.status(STATUS_OK,emailMessage.getAuthTOkenId()).entity(current).build();
+        return Response.status(STATUS_OK,emailMessage.getAuthTOkenId()).entity(emailMessage).build();
     }
 
     @DELETE
@@ -68,11 +68,11 @@ public class EmailRestServer {
     @Consumes("application/json")
     public Response deleteEmail(@PathParam("id") String id) throws SQLException {
 
-        EmailMessage current = SQLConClass.deleteEmail(id);
-        if(current == null){
+        String stringCurrent = SQLConClass.deleteEmail(id);
+        if(stringCurrent == null){
             return Response.status(Response.Status.NOT_FOUND).build();
         }
-        return Response.status(STATUS_OK, current.getAuthTOkenId()).entity(id).build();
+        return Response.status(STATUS_OK).entity(id).build();
     }
 
 }

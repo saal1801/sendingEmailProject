@@ -7,6 +7,7 @@ import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 
 import javax.mail.MessagingException;
+import java.io.IOException;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,6 +26,8 @@ public class HallowJobClass implements Job {
 
 
         try {
+            SQLConClass.proP();
+            SQLConClass.conn = SQLConClass.jdbcTemplate.getDataSource().getConnection();
             CallableStatement callableStatement = SQLConClass.conn.prepareCall("{CALL GetEmailPro()}");
             ResultSet sprs = callableStatement.executeQuery();
             if (sprs.next()) {
@@ -36,7 +39,7 @@ public class HallowJobClass implements Job {
                 emailTextClass.sendEmail(emailMessage);
             }
 
-        } catch (IllegalArgumentException | NullPointerException | MessagingException | ParseException | SQLException e) {
+        } catch (IllegalArgumentException | NullPointerException | MessagingException | ParseException | SQLException | IOException | ClassNotFoundException e) {
             e.printStackTrace();
 
         }

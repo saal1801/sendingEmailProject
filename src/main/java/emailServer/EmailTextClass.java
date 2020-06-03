@@ -8,6 +8,7 @@ import main.java.dto.EmailMessage;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -18,12 +19,12 @@ import java.util.Properties;
 public class EmailTextClass {
 
     public void sendEmail(EmailMessage emailMessage) throws
-            MessagingException, ParseException, SQLException {
+            MessagingException, ParseException, SQLException, IOException, ClassNotFoundException {
 
         // sqlConClass.readEmail(emailMessage);
 
-        final String userName = "49c39ef2c1d586";
-        final String password = "1af7298ecffac8";
+        final String userName = "793b611ba6b559";
+        final String password = "c0de1865fb6c62";
         String host = "smtp.mailtrap.io";
         String port = "2525";
 
@@ -71,10 +72,12 @@ public class EmailTextClass {
         //String response = t.getLastServerResponse().trim();
         int code = t.getLastReturnCode();
 
+        SQLConClass.proP();
+        SQLConClass.conn = SQLConClass.jdbcTemplate.getDataSource().getConnection();
 
         if (code == 250) {
             PreparedStatement stmt = SQLConClass.conn.prepareStatement("UPDATE emailpro SET status = 'SENT' where id = ?");
-            stmt.setString(1, emailMessage.authTOkenId);
+            stmt.setString(1, emailMessage.getAuthTOkenId());
             if (stmt != null) {
 
                 stmt.executeUpdate();
@@ -83,9 +86,8 @@ public class EmailTextClass {
 
         } else {
 
-            //PreparedStatement stmt = SQLConClass.conn.prepareStatement("UPDATE emailpro SET (status) value ('FAILED') ORDER BY ID DESC LIMIT 1");
             PreparedStatement stmt = SQLConClass.conn.prepareStatement("UPDATE emailpro SET status = 'FAILED' where id = ?");
-            stmt.setString(1, emailMessage.authTOkenId);
+            stmt.setString(1, emailMessage.getAuthTOkenId());
 
             stmt.executeUpdate();
             System.out.println("Response: " + "failed");

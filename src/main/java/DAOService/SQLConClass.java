@@ -1,94 +1,72 @@
 package main.java.DAOService;
 
 
+import main.java.dto.EmailMapper;
 import main.java.dto.EmailMessage;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.*;
+import java.util.Properties;
 
-public class SQLConClass {
+public class SQLConClass implements EmailRepository {
+    public static JdbcTemplate jdbcTemplate;
+    private static final String SQL_FIND_EMAIL = "SELECT id, EmailSender, EmailReceiver, subject, body" + " FROM emaildb.emailpro WHERE id=?";
+    private static final String SQL_INSERT_EMAIL = "INSERT INTO emailpro (id,EmailSender,EmailReceiver,subject,body,Received_Date) value (?,?,?,?,?,CURRENT_TIMESTAMP)";
+    private static final String SQL_UPDATE_EMAIL = "UPDATE emaildb.emailpro SET EmailSender=?, EmailReceiver=?, subject=?, body=? WHERE id=?";
+    private static final String SQL_DELETE_EMAIL = "DELETE FROM emaildb.emailpro WHERE id=?";
 
-    public static final String url = "jdbc:mysql://localhost:3306/emaildb?autoReconnect=true&useSSL=true";
+    /*public static final String url = "jdbc:mysql://localhost:3306/emaildb?autoReconnect=true&useSSL=true";
     public static final String user = "root";
     public static final String password = "password";
-
+*/
     public static Connection conn;
 
 
-    static {
+   /* static {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(url, user, password);
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }
-    }
+    }*/
 
 
-    public static void insertEmail(EmailMessage emailMessage) throws SQLException {
-
-        PreparedStatement stmt = SQLConClass.conn.prepareStatement("INSERT INTO emailpro (id,EmailSender,EmailReceiver,subject,body,Received_Date) value (?,?,?,?,?,CURRENT_TIMESTAMP)");
-        if (stmt != null) {
-
-            stmt.setObject(1, emailMessage.getAuthTOkenId());
-            stmt.setString(2, emailMessage.getFrom());
-            stmt.setString(3, emailMessage.getTo());
-            stmt.setString(4, emailMessage.getSubject());
-            stmt.setString(5, emailMessage.getBody());
-
-            int rowUpdate = stmt.executeUpdate();
-            System.out.println(" SQL row updated::::::: " + rowUpdate);
-        }
-    }
-
-    public static EmailMessage getById(String id) throws SQLException {
-
-        EmailMessage emailMessage;
-        String sql = "SELECT id, EmailSender, EmailReceiver, subject, body" + " FROM emaildb.emailpro WHERE id=?"; //  '" + id + "'"
-        PreparedStatement stmt = SQLConClass.conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
-        stmt.setString(1, id);
-
-        ResultSet rs = stmt.executeQuery();
-        emailMessage = new EmailMessage();
-
-        if (rs.next()) {
-            emailMessage.setAuthTOkenId(id);
-            emailMessage.setFrom(rs.getString("EmailSender"));
-            emailMessage.setTo(rs.getString("EmailReceiver"));
-            emailMessage.setSubject(rs.getString("subject"));
-            emailMessage.setBody(rs.getString("body"));
-            return emailMessage;
+    public static void proP() throws IOException, ClassNotFoundException {
+        String propFileName = "config.properties";
+        InputStream inputFile = SQLConClass.class.getClassLoader().getResourceAsStream(propFileName); // this = SQLConClass.class
+        Properties emailConfig = new Properties();
+        if (inputFile != null) {
+            emailConfig.load(inputFile);
         } else {
-            rs.close();
-            stmt.close();
-            if (conn != null) conn.close();
-            return null;
+            throw new FileNotFoundException("Property file '" + propFileName + "' no found in the classpath");
         }
+
+        SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
+        dataSource.setDriverClass((Class<? extends Driver>) Class.forName(emailConfig.getProperty("jdbc.driver")));//Class<Driver>
+        dataSource.setUrl(emailConfig.getProperty("jdbc.url"));
+        dataSource.setUsername(emailConfig.getProperty("jdbc.username"));
+        dataSource.setPassword(emailConfig.getProperty("jdbc.password"));
+        jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
-    public static EmailMessage updateEmail(String id, EmailMessage emailMessage1) throws SQLException {
 
-        PreparedStatement stmt = SQLConClass.conn.prepareStatement("UPDATE emaildb.emailpro SET EmailSender=?, EmailReceiver=?, subject=?, body=? WHERE id=?");
-        stmt.setString(1, emailMessage1.from);
-        stmt.setString(2, emailMessage1.to);
-        stmt.setString(3, emailMessage1.subject);
-        stmt.setString(4, emailMessage1.body);
-        stmt.setString(5, id);
-        stmt.executeUpdate();
-
-        emailMessage1 = SQLConClass.getById(id);
-
-        //stmt.close();
-        return emailMessage1;
+    @Override
+    public boolean insertEmail(EmailMessage emailMessage) throws IOException, ClassNotFoundException {
+        proP();
+        return jdbcTemplate.update(SQL_INSERT_EMAIL, emailMessage.getAuthTOkenId(), emailMessage.getFrom(),
+                emailMessage.getTo(), emailMessage.getSubject(), emailMessage.getBody()) > 0;
     }
 
-    public static String deleteEmail(String id) throws SQLException {
-
-        PreparedStatement stmt = SQLConClass.conn.prepareStatement("DELETE FROM emaildb.emailpro WHERE id=?");
-        stmt.setString(1, id);
-        stmt.executeUpdate();
-
-        stmt.close();
-        return "Email is deleted successfully " + id;
+    @Override
+    public EmailMessage getEmailById(String id) throws IOException, ClassNotFoundException {
+        proP();
+        return jdbcTemplate.queryForObject(SQL_FIND_EMAIL, new Object[]{id}, new EmailMapper());
     }
+
 }
 

@@ -1,4 +1,4 @@
-# SendingEmailProject
+# Sending Email Project
 
 The Queue interface of the Java collections framework provides the functionality of the queue data structure. It extends the Collection interface.
 
